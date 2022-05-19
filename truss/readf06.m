@@ -57,4 +57,4 @@ fi(j:j+5,i)=zhenxing(k,:);
 k=k+1;
     end
 end
-save needdata3 fi ORDER;
+save needdata fi ORDER;

@@ -1,0 +1,340 @@
+********************************************************************************
+*                            NODE LOCATION REPORT                              *
+********************************************************************************
+MSC.Patran 2019 
+File: E:\OneDrive - stu.hit.edu.cn\patran\truss2.db
+Date: 19-May-22
+Time: 10:03:12
+
+Node Locations
+   Node ID   Coord 1 Value   Coord 2 Value   Coord 3 Value          Reference CID
+         1        0.000000        0.400000        0.000000   (Global) Rectangular
+         2        0.300000        0.400000        0.000000   (Global) Rectangular
+         3        0.300000        0.400000        0.400000   (Global) Rectangular
+         4        0.300000        0.000000        0.000000   (Global) Rectangular
+         5        0.300000        0.000000        0.400000   (Global) Rectangular
+         6        0.000000        0.000000        0.000000   (Global) Rectangular
+         7        0.000000        0.000000        0.400000   (Global) Rectangular
+         8        0.000000        0.400000        0.400000   (Global) Rectangular
+         9        0.600000        0.400000        0.000000   (Global) Rectangular
+        10        0.600000        0.400000        0.400000   (Global) Rectangular
+        11        0.600000        0.000000        0.000000   (Global) Rectangular
+        12        0.600000        0.000000        0.400000   (Global) Rectangular
+        13        0.900000        0.400000        0.000000   (Global) Rectangular
+        14        0.900000        0.400000        0.400000   (Global) Rectangular
+        15        0.900000        0.000000        0.000000   (Global) Rectangular
+        16        0.900000        0.000000        0.400000   (Global) Rectangular
+        17        1.200000        0.400000        0.000000   (Global) Rectangular
+        18        1.200000        0.400000        0.400000   (Global) Rectangular
+        19        1.200000        0.000000        0.000000   (Global) Rectangular
+        20        1.200000        0.000000        0.400000   (Global) Rectangular
+        21        1.500000        0.400000        0.000000   (Global) Rectangular
+        22        1.500000        0.400000        0.400000   (Global) Rectangular
+        23        1.500000        0.000000        0.000000   (Global) Rectangular
+        24        1.500000        0.000000        0.400000   (Global) Rectangular
+        25        1.800000        0.400000        0.000000   (Global) Rectangular
+        26        1.800000        0.400000        0.400000   (Global) Rectangular
+        27        1.800000        0.000000        0.000000   (Global) Rectangular
+        28        1.800000        0.000000        0.400000   (Global) Rectangular
+        29        2.100000        0.400000        0.000000   (Global) Rectangular
+        30        2.100000        0.400000        0.400000   (Global) Rectangular
+        31        2.100000        0.000000        0.000000   (Global) Rectangular
+        32        2.100000        0.000000        0.400000   (Global) Rectangular
+        33        2.400000        0.400000        0.000000   (Global) Rectangular
+        34        2.400000        0.400000        0.400000   (Global) Rectangular
+        35        2.400000        0.000000        0.000000   (Global) Rectangular
+        36        2.400000        0.000000        0.400000   (Global) Rectangular
+        37        2.700000        0.400000        0.000000   (Global) Rectangular
+        38        2.700000        0.400000        0.400000   (Global) Rectangular
+        39        2.700000        0.000000        0.000000   (Global) Rectangular
+        40        2.700000        0.000000        0.400000   (Global) Rectangular
+        41        3.000000        0.400000        0.000000   (Global) Rectangular
+        42        3.000000        0.400000        0.400000   (Global) Rectangular
+        43        3.000000        0.000000        0.000000   (Global) Rectangular
+        44        3.000000        0.000000        0.400000   (Global) Rectangular
+        45        3.300000        0.400000        0.000000   (Global) Rectangular
+        46        3.300000        0.400000        0.400000   (Global) Rectangular
+        47        3.300000        0.000000        0.000000   (Global) Rectangular
+        48        3.300000        0.000000        0.400000   (Global) Rectangular
+        49        3.600000        0.400000        0.000000   (Global) Rectangular
+        50        3.600000        0.400000        0.400000   (Global) Rectangular
+        51        3.600000        0.000000        0.000000   (Global) Rectangular
+        52        3.600000        0.000000        0.400000   (Global) Rectangular
+        53        3.900000        0.400000        0.000000   (Global) Rectangular
+        54        3.900000        0.400000        0.400000   (Global) Rectangular
+        55        3.900000        0.000000        0.000000   (Global) Rectangular
+        56        3.900000        0.000000        0.400000   (Global) Rectangular
+        57        4.200000        0.400000        0.000000   (Global) Rectangular
+        58        4.200000        0.400000        0.400000   (Global) Rectangular
+        59        4.200000        0.000000        0.000000   (Global) Rectangular
+        60        4.200000        0.000000        0.400000   (Global) Rectangular
+        61        4.500000        0.400000        0.000000   (Global) Rectangular
+        62        4.500000        0.400000        0.400000   (Global) Rectangular
+        63        4.500000        0.000000        0.000000   (Global) Rectangular
+        64        4.500000        0.000000        0.400000   (Global) Rectangular
+        65        4.800000        0.400000        0.000000   (Global) Rectangular
+        66        4.800000        0.400000        0.400000   (Global) Rectangular
+        67        4.800000        0.000000        0.000000   (Global) Rectangular
+        68        4.800000        0.000000        0.400000   (Global) Rectangular
+        69        5.100000        0.400000        0.000000   (Global) Rectangular
+        70        5.100000        0.400000        0.400000   (Global) Rectangular
+        71        5.100000        0.000000        0.000000   (Global) Rectangular
+        72        5.100000        0.000000        0.400000   (Global) Rectangular
+        73        5.400000        0.400000        0.000000   (Global) Rectangular
+        74        5.400000        0.400000        0.400000   (Global) Rectangular
+        75        5.400000        0.000000        0.000000   (Global) Rectangular
+        76        5.400000        0.000000        0.400000   (Global) Rectangular
+        77        5.700000        0.400000        0.000000   (Global) Rectangular
+        78        5.700000        0.400000        0.400000   (Global) Rectangular
+        79        5.700000        0.000000        0.000000   (Global) Rectangular
+        80        5.700000        0.000000        0.400000   (Global) Rectangular
+        81        6.000000        0.400000        0.000000   (Global) Rectangular
+        82        6.000000        0.400000        0.400000   (Global) Rectangular
+        83        6.000000        0.000000        0.000000   (Global) Rectangular
+        84        6.000000        0.000000        0.400000   (Global) Rectangular
+        85        6.300000        0.400000        0.000000   (Global) Rectangular
+        86        6.300000        0.400000        0.400000   (Global) Rectangular
+        87        6.300000        0.000000        0.000000   (Global) Rectangular
+        88        6.300000        0.000000        0.400000   (Global) Rectangular
+        89        6.600000        0.400000        0.000000   (Global) Rectangular
+        90        6.600000        0.400000        0.400000   (Global) Rectangular
+        91        6.600000        0.000000        0.000000   (Global) Rectangular
+        92        6.600000        0.000000        0.400000   (Global) Rectangular
+        93        6.900000        0.400000        0.000000   (Global) Rectangular
+        94        6.900000        0.400000        0.400000   (Global) Rectangular
+        95        6.900000        0.000000        0.000000   (Global) Rectangular
+        96        6.900000        0.000000        0.400000   (Global) Rectangular
+        97        7.200000        0.400000        0.000000   (Global) Rectangular
+        98        7.200000        0.400000        0.400000   (Global) Rectangular
+        99        7.200000        0.000000        0.000000   (Global) Rectangular
+       100        7.200000        0.000000        0.400000   (Global) Rectangular
+       101        7.500000        0.400000        0.000000   (Global) Rectangular
+       102        7.500000        0.400000        0.400000   (Global) Rectangular
+       103        7.500000        0.000000        0.000000   (Global) Rectangular
+       104        7.500000        0.000000        0.400000   (Global) Rectangular
+       105        7.800000        0.400000        0.000000   (Global) Rectangular
+       106        7.800000        0.400000        0.400000   (Global) Rectangular
+       107        7.800000        0.000000        0.000000   (Global) Rectangular
+       108        7.800000        0.000000        0.400000   (Global) Rectangular
+       109        8.100000        0.400000        0.000000   (Global) Rectangular
+       110        8.100000        0.400000        0.400000   (Global) Rectangular
+       111        8.100000        0.000000        0.000000   (Global) Rectangular
+       112        8.100000        0.000000        0.400000   (Global) Rectangular
+       113        8.400000        0.400000        0.000000   (Global) Rectangular
+       114        8.400000        0.400000        0.400000   (Global) Rectangular
+       115        8.400000        0.000000        0.000000   (Global) Rectangular
+       116        8.400000        0.000000        0.400000   (Global) Rectangular
+       117        8.700000        0.400000        0.000000   (Global) Rectangular
+       118        8.700000        0.400000        0.400000   (Global) Rectangular
+       119        8.700000        0.000000        0.000000   (Global) Rectangular
+       120        8.700000        0.000000        0.400000   (Global) Rectangular
+       121        9.000000        0.400000        0.000000   (Global) Rectangular
+       122        9.000000        0.400000        0.400000   (Global) Rectangular
+       123        9.000000        0.000000        0.000000   (Global) Rectangular
+       124        9.000000        0.000000        0.400000   (Global) Rectangular
+       125        9.300000        0.400000        0.000000   (Global) Rectangular
+       126        9.300000        0.400000        0.400000   (Global) Rectangular
+       127        9.300000        0.000000        0.000000   (Global) Rectangular
+       128        9.300000        0.000000        0.400000   (Global) Rectangular
+       129        9.600000        0.400000        0.000000   (Global) Rectangular
+       130        9.600000        0.400000        0.400000   (Global) Rectangular
+       131        9.600000        0.000000        0.000000   (Global) Rectangular
+       132        9.600000        0.000000        0.400000   (Global) Rectangular
+       133        9.900000        0.400000        0.000000   (Global) Rectangular
+       134        9.900000        0.400000        0.400000   (Global) Rectangular
+       135        9.900000        0.000000        0.000000   (Global) Rectangular
+       136        9.900000        0.000000        0.400000   (Global) Rectangular
+       137       10.200000        0.400000        0.000000   (Global) Rectangular
+       138       10.200000        0.400000        0.400000   (Global) Rectangular
+       139       10.200000        0.000000        0.000000   (Global) Rectangular
+       140       10.200000        0.000000        0.400000   (Global) Rectangular
+       141       10.500000        0.400000        0.000000   (Global) Rectangular
+       142       10.500000        0.400000        0.400000   (Global) Rectangular
+       143       10.500000        0.000000        0.000000   (Global) Rectangular
+       144       10.500000        0.000000        0.400000   (Global) Rectangular
+       145       10.800000        0.400000        0.000000   (Global) Rectangular
+       146       10.800000        0.400000        0.400000   (Global) Rectangular
+       147       10.800000        0.000000        0.000000   (Global) Rectangular
+       148       10.800000        0.000000        0.400000   (Global) Rectangular
+       149       11.100000        0.400000        0.000000   (Global) Rectangular
+       150       11.100000        0.400000        0.400000   (Global) Rectangular
+       151       11.100000        0.000000        0.000000   (Global) Rectangular
+       152       11.100000        0.000000        0.400000   (Global) Rectangular
+       153       11.400000        0.400000        0.000000   (Global) Rectangular
+       154       11.400000        0.400000        0.400000   (Global) Rectangular
+       155       11.400000        0.000000        0.000000   (Global) Rectangular
+       156       11.400000        0.000000        0.400000   (Global) Rectangular
+       157       11.700000        0.400000        0.000000   (Global) Rectangular
+       158       11.700000        0.400000        0.400000   (Global) Rectangular
+       159       11.700000        0.000000        0.000000   (Global) Rectangular
+       160       11.700000        0.000000        0.400000   (Global) Rectangular
+       161       12.000000        0.400000        0.000000   (Global) Rectangular
+       162       12.000000        0.400000        0.400000   (Global) Rectangular
+       163       12.000000        0.000000        0.000000   (Global) Rectangular
+       164       12.000000        0.000000        0.400000   (Global) Rectangular
+Node Locations
+   Node ID           Analysis CID
+         1   (Global) Rectangular
+         2   (Global) Rectangular
+         3   (Global) Rectangular
+         4   (Global) Rectangular
+         5   (Global) Rectangular
+         6   (Global) Rectangular
+         7   (Global) Rectangular
+         8   (Global) Rectangular
+         9   (Global) Rectangular
+        10   (Global) Rectangular
+        11   (Global) Rectangular
+        12   (Global) Rectangular
+        13   (Global) Rectangular
+        14   (Global) Rectangular
+        15   (Global) Rectangular
+        16   (Global) Rectangular
+        17   (Global) Rectangular
+        18   (Global) Rectangular
+        19   (Global) Rectangular
+        20   (Global) Rectangular
+        21   (Global) Rectangular
+        22   (Global) Rectangular
+        23   (Global) Rectangular
+        24   (Global) Rectangular
+        25   (Global) Rectangular
+        26   (Global) Rectangular
+        27   (Global) Rectangular
+        28   (Global) Rectangular
+        29   (Global) Rectangular
+        30   (Global) Rectangular
+        31   (Global) Rectangular
+        32   (Global) Rectangular
+        33   (Global) Rectangular
+        34   (Global) Rectangular
+        35   (Global) Rectangular
+        36   (Global) Rectangular
+        37   (Global) Rectangular
+        38   (Global) Rectangular
+        39   (Global) Rectangular
+        40   (Global) Rectangular
+        41   (Global) Rectangular
+        42   (Global) Rectangular
+        43   (Global) Rectangular
+        44   (Global) Rectangular
+        45   (Global) Rectangular
+        46   (Global) Rectangular
+        47   (Global) Rectangular
+        48   (Global) Rectangular
+        49   (Global) Rectangular
+        50   (Global) Rectangular
+        51   (Global) Rectangular
+        52   (Global) Rectangular
+        53   (Global) Rectangular
+        54   (Global) Rectangular
+        55   (Global) Rectangular
+        56   (Global) Rectangular
+        57   (Global) Rectangular
+        58   (Global) Rectangular
+        59   (Global) Rectangular
+        60   (Global) Rectangular
+        61   (Global) Rectangular
+        62   (Global) Rectangular
+        63   (Global) Rectangular
+        64   (Global) Rectangular
+        65   (Global) Rectangular
+        66   (Global) Rectangular
+        67   (Global) Rectangular
+        68   (Global) Rectangular
+        69   (Global) Rectangular
+        70   (Global) Rectangular
+        71   (Global) Rectangular
+        72   (Global) Rectangular
+        73   (Global) Rectangular
+        74   (Global) Rectangular
+        75   (Global) Rectangular
+        76   (Global) Rectangular
+        77   (Global) Rectangular
+        78   (Global) Rectangular
+        79   (Global) Rectangular
+        80   (Global) Rectangular
+        81   (Global) Rectangular
+        82   (Global) Rectangular
+        83   (Global) Rectangular
+        84   (Global) Rectangular
+        85   (Global) Rectangular
+        86   (Global) Rectangular
+        87   (Global) Rectangular
+        88   (Global) Rectangular
+        89   (Global) Rectangular
+        90   (Global) Rectangular
+        91   (Global) Rectangular
+        92   (Global) Rectangular
+        93   (Global) Rectangular
+        94   (Global) Rectangular
+        95   (Global) Rectangular
+        96   (Global) Rectangular
+        97   (Global) Rectangular
+        98   (Global) Rectangular
+        99   (Global) Rectangular
+       100   (Global) Rectangular
+       101   (Global) Rectangular
+       102   (Global) Rectangular
+       103   (Global) Rectangular
+       104   (Global) Rectangular
+       105   (Global) Rectangular
+       106   (Global) Rectangular
+       107   (Global) Rectangular
+       108   (Global) Rectangular
+       109   (Global) Rectangular
+       110   (Global) Rectangular
+       111   (Global) Rectangular
+       112   (Global) Rectangular
+       113   (Global) Rectangular
+       114   (Global) Rectangular
+       115   (Global) Rectangular
+       116   (Global) Rectangular
+       117   (Global) Rectangular
+       118   (Global) Rectangular
+       119   (Global) Rectangular
+       120   (Global) Rectangular
+       121   (Global) Rectangular
+       122   (Global) Rectangular
+       123   (Global) Rectangular
+       124   (Global) Rectangular
+       125   (Global) Rectangular
+       126   (Global) Rectangular
+       127   (Global) Rectangular
+       128   (Global) Rectangular
+       129   (Global) Rectangular
+       130   (Global) Rectangular
+       131   (Global) Rectangular
+       132   (Global) Rectangular
+       133   (Global) Rectangular
+       134   (Global) Rectangular
+       135   (Global) Rectangular
+       136   (Global) Rectangular
+       137   (Global) Rectangular
+       138   (Global) Rectangular
+       139   (Global) Rectangular
+       140   (Global) Rectangular
+       141   (Global) Rectangular
+       142   (Global) Rectangular
+       143   (Global) Rectangular
+       144   (Global) Rectangular
+       145   (Global) Rectangular
+       146   (Global) Rectangular
+       147   (Global) Rectangular
+       148   (Global) Rectangular
+       149   (Global) Rectangular
+       150   (Global) Rectangular
+       151   (Global) Rectangular
+       152   (Global) Rectangular
+       153   (Global) Rectangular
+       154   (Global) Rectangular
+       155   (Global) Rectangular
+       156   (Global) Rectangular
+       157   (Global) Rectangular
+       158   (Global) Rectangular
+       159   (Global) Rectangular
+       160   (Global) Rectangular
+       161   (Global) Rectangular
+       162   (Global) Rectangular
+       163   (Global) Rectangular
+       164   (Global) Rectangular

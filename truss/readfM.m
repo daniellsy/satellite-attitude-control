@@ -11,10 +11,10 @@ while (~feof(fid))
       while(line(1)~='1'&&line(2)~='*')
          [pointID,~,T1,T2,T3,R1,R2,R3]=strread(line,'%d %s %f %f %f %f %f %f');
          if abs(T1)>0.00001
-         m3(pointID,:)=abs(T1);
+         m(pointID,:)=abs(T1);
          else if abs(T2)>0.00001
-                 m3(pointID,:)=abs(T2);
-             else m3(pointID,:)=abs(T3);
+                 m(pointID,:)=abs(T2);
+             else m(pointID,:)=abs(T3);
              end
          end
          j=j+1;
@@ -26,5 +26,5 @@ while (~feof(fid))
  end
  line=fgetl(fid);
 end
-M=sum(m3);
-save M3 m3;
+M=sum(m);
+save M m;

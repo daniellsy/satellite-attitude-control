@@ -1,0 +1,1065 @@
+1
+ 
+ 
+ 
+ 
+                      Warning: This computer program is protected by copyright law and international treaties.       
+                  Unauthorized use, reproduction or distribution of this computer program, or any portion of it, may 
+                                          result in severe civil and criminal penalties.                             
+                         Copyright (C) 2018 MSC Software Corporation and its licensors. All rights reserved.         
+ 
+ 
+                                              * * * * * * * * * * * * * * * * * * * *
+                                              * * * * * * * * * * * * * * * * * * * *
+                                              * *                                 * *
+                                              * *           MSC Software          * *
+                                              * *               CORP              * *
+                                              * *                                 * *
+                                              * *      M S C   N a s t r a n      * *
+                                              * *                                 * *
+                                              * *                                 * *
+                                              * *                                 * *
+                                              * *     Version 2019.0.0-CL621679   * *
+                                              * *                                 * *
+                                              * *                                 * *
+                                              * *                                 * *
+                                              * *          DEC 18, 2018           * *
+                                              * *                                 * *
+                                              * *              Intel              * *
+                                              * *MODEL Xeon/2859 (DESKTOP-B9BB0S2 * *
+                                              * *     Windows 10 Pro 6.2 9200     * *
+                                              * * Compiled for 8664 (SINGLE Mode) * *
+                                              * *                                 * *
+                                              * * * * * * * * * * * * * * * * * * * *
+                                              * * * * * * * * * * * * * * * * * * * *
+1News file - (November 7, 2018)
+  
+               Welcome to MSC Nastran 2019.0
+  
+  
+   MSC Nastran brings powerful new features and enhancements for engineering
+   solutions.
+  
+     Dynamics
+     -  RFORCE and GRAV loads can now be optionally applied to a subset of
+        the model
+  
+     SOL 128 (Nonlinear Harmonics) Rotordynamics Enhancements
+     -  Option to reset initial conditions
+     -  Nonlinear load output
+     -  Output for multiple harmonics
+     -  Support for continuation procedure for frequency-independent analysis
+  
+     Pyramid Element
+     -  The linear and quadratic pyramid element is available in linear
+        solutions: statics, modes, buckling, frequency and transient dynamics,
+        linear contact, acoustics, fatigue, rotordynamics, aeroelasticity and
+        design optimization
+     -  The element is also available in SOL 400 for linear, nlstatics,
+        nltransient and linear perturbation solutions
+  
+     Assembly
+     -  Module Instantiation:  Allow copy of a primary Module to create
+        a secondary Module at a new position by translation, rotation and mirror
+  
+     Contact
+     -  Support geometry adjustment of initial stress free in S2S Contact
+     -  Support model check output in S2S Contact
+     -  Allow user input minimum angle between segments on BCPARA
+  
+     SOL 400 Implicit Nonlinear Analysis
+     -  Support Automatic SGLUE setup for permanent glued contact with large
+        deformation
+     -  Reduce the debug output when using "NLOPRM NLDBG(N3DSUM)"
+     -  Support MONPNT1, MONPNT3, MONSUM, MONSUM1, and MONSUMT in NLSTAT
+        and NLTRAN
+  
+     SOL 700 Explicit Nonlinear Analysis
+     -  Support failure of ACS surface and DMP of ACS algorithm
+     -  Support Occupant Safety, including Articulated Total Body (ATB),
+        Initial Metric Method (IMM) and Air bag fabric material model (MATFAB)
+     -  Support Viscoelastic Material (MATVE), Localized Cohesive friction, and
+        User Defined Services (UDS)
+  
+     High Performance Computing (HPC)
+1    -  Improved performance and scalability of acoustic coupling reduction
+        with ACMS for large models
+     -  Improved performance for ACMS Phase 1 for large solid models
+     -  Improved performance (up to 10X) in the RANDOM module
+     -  New DMP implementation for Panel Participation factor calculation
+        (PFCALC) with linear parallel scaling
+     -  Performance enhancements for FASTFR through shared-memory
+        parallelization (SMP) of frequency processing
+  
+  
+     Results HDF5 Database
+     -  Support outputs of Aerodynamic solution SOL144, 145 and 146 results
+     -  Support Modal effective  mass, Modules,  Contact Check and
+        Global contact body data
+     -  Support Bar/Beam end loads under the shear stress effect of 2D elements
+  
+  
+     Documentation
+     The complete documentation set is provided in a separate installer and
+     when installed is available at: MSC_DOC_DIR/doc/pdf_nastran directory.
+     Where MSC_DOC_DIR is the directory where documentation was installed
+     This help set has cross references between documents, links to how-to
+     videos, and example files.
+  
+     Individual MSC Nastran documents are available for download from the
+       Simcompanion Website at:
+       http://simcompanion.mscsoftware.com/
+  
+     These documents were updated for the MSC Nastran 2019 Release
+  
+         1.  MSC Nastran 2019.0 Installation and Operations Guide
+         2.  MSC Nastran 2019.0 Quick Reference Guide
+         3.  MSC Nastran 2019.0 Release Guide
+         4.  MSC Nastran 2019.0 Linear Statics Analysis User's Guide
+         5.  MSC Nastran 2019.0 Dynamic Analysis User's Guide
+         6.  MSC Nastran 2019.0 Superelements User's Guide
+         7.  MSC Nastran 2019.0 Rotordynamics User's Guide
+         8.  MSC Nastran 2019.0 Demonstration Problems Manual
+         9.  MSC Nastran 2019.0 Nastran Embedded Fatigue User's Guide
+        10.  MSC Nastran 2019.0 Design Sensitivity and Optimization
+        11.  MSC Nastran 2019.0 Nonlinear User's Guide SOL 400
+        12.  MSC Nastran 2019.0 DMAP Programmer's Guide
+        13.  MSC Nastran 2019.0 High Performance Computing User's Guide
+        14.  MSC Nastran 2019.0 DEMATD Guide
+        15.  MSC Nastran 2019.0 Explicit Nonlinear (SOL 700) User's Guide
+  
+   Please refer to  MSC_DOC_DIR/doc/pdf_nastran/nastran_library.pdf
+   for the complete document set:
+  
+  
+1  Additional information about the release can be found at the MSC Nastran
+   Product Support page: http://simcompanion.mscsoftware.com
+  
+   The support page provides links to these valuable information:
+      * A searchable Knowledge Base containing examples and answers to thousands
+        of frequently asked questions written by MSC Software subject-matter
+        experts.
+      * Peer-to-peer Discussion Forums enabling you to post questions for your
+        MSC Software products and receive answers from other users worldwide.
+      * A list of known issues with the product and any workarounds.
+      * Instructions on how to contact technical support
+      * A mechanism for sending us product feedback or enhancement requests.
+      * Hardware and software requirements.
+      * Examples and Tutorials
+      * and much more.
+  
+   For information on training, please visit our Training web site
+  
+      http://www.mscsoftware.com/Contents/Services/Training/
+  
+1                                                                               MAY  19, 2022  MSC Nastran 12/18/18   PAGE     1
+                                                                                                                                    
+0        N A S T R A N    F I L E    A N D    S Y S T E M    P A R A M E T E R    E C H O                                           
+0                                                                                                                                   
+                                                                                                                                    
+                                                                                                                                    
+     $ SYSFIELD=SCR*(RAW=YES,BUFFIO=YES,WNUM=16,WSIZE=16MB) $(D:/PROGRAM FILES/MSC.SO
+     $ SYSFIELD=DBALL(RAW=YES,BUFFIO=YES,WNUM=16,WSIZE=16MB) $(D:/PROGRAM FILES/MSC.S
+     NASTRAN BUFFSIZE=32769 $(D:/PROGRAM FILES/MSC.SOFTWARE/NASTRAN/CONF/NAST20190.RC
+     $ MSC.NASTRAN INPUT FILE CREATED ON MAY       19, 2022 AT 10:46:18 BY           
+     $ PATRAN 2019                                                                   
+     $ DIRECT TEXT INPUT FOR NASTRAN SYSTEM CELL SECTION                             
+     $ DIRECT TEXT INPUT FOR FILE MANAGEMENT SECTION                                 
+     $ DIRECT TEXT INPUT FOR EXECUTIVE CONTROL                                       
+     $ LINEAR STATIC ANALYSIS, DATABASE                                              
+1                                                                               MAY  19, 2022  MSC Nastran 12/18/18   PAGE     2
+                                                                                                                                    
+0        N A S T R A N    E X E C U T I V E    C O N T R O L    E C H O                                                             
+0                                                                                                                                   
+                                                                                                                                    
+                                                                                                                                    
+     SOL 101                                                                                 
+     CEND                                                                                    
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE     3
+                                                                                                                                    
+0                                                                                                                                   
+0                                        C A S E    C O N T R O L    E C H O                                                        
+                 COMMAND                                                                                                            
+                 COUNT                                                                                                              
+                  1      $ DIRECT TEXT INPUT FOR GLOBAL CASE CONTROL DATA                                        
+                  2      TITLE = MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                                
+                  3      ECHO = NONE                                                                             
+                  4      SUBCASE 1                                                                               
+                  5         SUBTITLE=DEFAULT                                                                     
+                  6         SPC = 2                                                                              
+                  7         LOAD = 2                                                                             
+                  8         OLOAD(SORT1,REAL)=ALL                                                                
+                  9      $ DIRECT TEXT INPUT FOR THIS SUBCASE                                                    
+                 10      BEGIN BULK                                                                              
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE     4
+                                                                                                                                    
+0                                                                                                                                   
+                                        M O D E L   S U M M A R Y          BULK = 0
+                                   ENTRY NAME        NUMBER OF ENTRIES
+                                   ----------        -----------------
+                                         CROD                      520
+                                         GRAV                        1
+                                         GRID                      164
+                                         LOAD                        1
+                                         MAT1                        1
+                                       MDLPRM                        1
+                                        PARAM                        1
+                                         PROD                        1
+                                         SPC1                        1
+                                       SPCADD                        1
+
+ ^^^     
+ ^^^ >>> IFP OPERATIONS COMPLETE <<< 
+ ^^^     
+ *** USER INFORMATION MESSAGE 3 (crdb::nastran::Processor::writeInput)
+ *** USER INFORMATION MESSAGE  (WRITE DATA BLOCK PVT, TRAILER[101, 5, 0, 0, 0, 0, 0])
+ *** USER INFORMATION MESSAGE 3 (crdb::nastran::Processor::writeInput)
+ *** USER INFORMATION MESSAGE  (WRITE DATA BLOCK CASECC, TRAILER[102, 1, 0, 1000, 0, 0, 0])
+ *** USER INFORMATION MESSAGE 3 (crdb::nastran::Processor::writeInput)
+ *** USER INFORMATION MESSAGE  (WRITE DATA BLOCK GEOM1Q, TRAILER[101, 0, 0, 8, 0, 0, 0])
+ *** USER INFORMATION MESSAGE 3 (crdb::nastran::Processor::writeInput)
+ *** USER INFORMATION MESSAGE  (WRITE DATA BLOCK EPT, TRAILER[101, 128, 0, 0, 0, 0, 0])
+ *** USER INFORMATION MESSAGE 3 (crdb::nastran::Processor::writeInput)
+ *** USER INFORMATION MESSAGE  (WRITE DATA BLOCK MPT, TRAILER[102, 32768, 0, 0, 0, 0, 0])
+ *** USER INFORMATION MESSAGE 3 (crdb::nastran::Processor::writeInput)
+ *** USER INFORMATION MESSAGE  (WRITE DATA BLOCK GEOM2, TRAILER[103, 0, 4, 0, 0, 0, 0])
+ *** USER INFORMATION MESSAGE 3 (crdb::nastran::Processor::writeInput)
+ *** USER INFORMATION MESSAGE  (WRITE DATA BLOCK GEOM3S, TRAILER[104, 0, 0, 16, 8, 0, 0])
+ *** USER INFORMATION MESSAGE 3 (crdb::nastran::Processor::writeInput)
+ *** USER INFORMATION MESSAGE  (DATA BLOCK GEOM3S IS NOT SUPPORTED)
+ *** USER INFORMATION MESSAGE 3 (crdb::nastran::Processor::writeInput)
+ *** USER INFORMATION MESSAGE  (WRITE DATA BLOCK GEOM4S, TRAILER[105, 0, 0, 0, 96, 0, 0])
+ *** USER INFORMATION MESSAGE 3 (crdb::nastran::Processor::writeInput)
+ *** USER INFORMATION MESSAGE  (DATA BLOCK GEOM4S IS NOT SUPPORTED)
+ *** USER INFORMATION MESSAGE 3 (crdb::nastran::Processor::writeInput)
+ *** USER INFORMATION MESSAGE  (WRITE DATA BLOCK GEOM1, TRAILER[101, 0, 0, 8, 0, 0, 0])
+ *** USER INFORMATION MESSAGE 3 (crdb::nastran::Processor::writeInput)
+ *** USER INFORMATION MESSAGE  (WRITE DATA BLOCK EDT, TRAILER[103, 0, 0, 0, 0, 0, 4])
+ *** USER INFORMATION MESSAGE 3 (crdb::nastran::Processor::writeInput)
+ *** USER INFORMATION MESSAGE  (WRITE DATA BLOCK GEOM3, TRAILER[101, 0, 0, 16, 8, 0, 0])
+ *** USER INFORMATION MESSAGE 3 (crdb::nastran::Processor::writeInput)
+ *** USER INFORMATION MESSAGE  (WRITE DATA BLOCK GEOM4, TRAILER[102, 0, 0, 0, 96, 0, 0])
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE     5
+                                                                                                                                    
+0                                                                                                                                   
+ *** USER INFORMATION MESSAGE 7310 (VECPRN)
+     ORIGIN OF SUPERELEMENT OR MODULE BASIC COORDINATE SYSTEM WILL BE USED AS REFERENCE LOCATION.
+     RESULTANTS ABOUT ORIGIN OF SUPERELEMENT OR MODULE BASIC COORDINATE SYSTEM IN SUPERELEMENT OR MODULE
+     BASIC SYSTEM COORDINATES.
+0                                                  OLOAD    RESULTANT       
+  SUBCASE/    LOAD
+  DAREA ID    TYPE       T1            T2            T3            R1            R2            R3
+0        1     FX    0.000000E+00     ----          ----          ----       0.000000E+00  0.000000E+00                             
+               FY       ----       0.000000E+00     ----       0.000000E+00     ----       0.000000E+00                             
+               FZ       ----          ----       4.180363E+01  8.360725E+00 -2.533527E+02     ----                                  
+               MX       ----          ----          ----       0.000000E+00     ----          ----                                  
+               MY       ----          ----          ----          ----       0.000000E+00     ----                                  
+               MZ       ----          ----          ----          ----          ----       0.000000E+00                             
+             TOTALS  0.000000E+00  0.000000E+00  4.180363E+01  8.360725E+00 -2.533527E+02  0.000000E+00
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE     6
+                                                                                                                                    
+0                                                                                                            SUBCASE 1              
+0                                         G R I D   P O I N T   S I N G U L A R I T Y   T A B L E
+0                             POINT    TYPE   FAILED      STIFFNESS       OLD USET           NEW USET
+                               ID            DIRECTION      RATIO     EXCLUSIVE  UNION   EXCLUSIVE  UNION
+                                1        G      4         0.00E+00          B        F         SB       S    *
+                                1        G      5         0.00E+00          B        F         SB       S    *
+                                1        G      6         0.00E+00          B        F         SB       S    *
+                                2        G      4         0.00E+00          B        F         SB       S    *
+                                2        G      5         0.00E+00          B        F         SB       S    *
+                                2        G      6         0.00E+00          B        F         SB       S    *
+                                3        G      4         0.00E+00          B        F         SB       S    *
+                                3        G      5         0.00E+00          B        F         SB       S    *
+                                3        G      6         0.00E+00          B        F         SB       S    *
+                                4        G      4         0.00E+00          B        F         SB       S    *
+                                4        G      5         0.00E+00          B        F         SB       S    *
+                                4        G      6         0.00E+00          B        F         SB       S    *
+                                5        G      4         0.00E+00          B        F         SB       S    *
+                                5        G      5         0.00E+00          B        F         SB       S    *
+                                5        G      6         0.00E+00          B        F         SB       S    *
+                                6        G      4         0.00E+00          B        F         SB       S    *
+                                6        G      5         0.00E+00          B        F         SB       S    *
+                                6        G      6         0.00E+00          B        F         SB       S    *
+                                7        G      4         0.00E+00          B        F         SB       S    *
+                                7        G      5         0.00E+00          B        F         SB       S    *
+                                7        G      6         0.00E+00          B        F         SB       S    *
+                                8        G      4         0.00E+00          B        F         SB       S    *
+                                8        G      5         0.00E+00          B        F         SB       S    *
+                                8        G      6         0.00E+00          B        F         SB       S    *
+                                9        G      4         0.00E+00          B        F         SB       S    *
+                                9        G      5         0.00E+00          B        F         SB       S    *
+                                9        G      6         0.00E+00          B        F         SB       S    *
+                               10        G      4         0.00E+00          B        F         SB       S    *
+                               10        G      5         0.00E+00          B        F         SB       S    *
+                               10        G      6         0.00E+00          B        F         SB       S    *
+                               11        G      4         0.00E+00          B        F         SB       S    *
+                               11        G      5         0.00E+00          B        F         SB       S    *
+                               11        G      6         0.00E+00          B        F         SB       S    *
+                               12        G      4         0.00E+00          B        F         SB       S    *
+                               12        G      5         0.00E+00          B        F         SB       S    *
+                               12        G      6         0.00E+00          B        F         SB       S    *
+                               13        G      4         0.00E+00          B        F         SB       S    *
+                               13        G      5         0.00E+00          B        F         SB       S    *
+                               13        G      6         0.00E+00          B        F         SB       S    *
+                               14        G      4         0.00E+00          B        F         SB       S    *
+                               14        G      5         0.00E+00          B        F         SB       S    *
+                               14        G      6         0.00E+00          B        F         SB       S    *
+                               15        G      4         0.00E+00          B        F         SB       S    *
+                               15        G      5         0.00E+00          B        F         SB       S    *
+                               15        G      6         0.00E+00          B        F         SB       S    *
+                               16        G      4         0.00E+00          B        F         SB       S    *
+                               16        G      5         0.00E+00          B        F         SB       S    *
+                               16        G      6         0.00E+00          B        F         SB       S    *
+                               17        G      4         0.00E+00          B        F         SB       S    *
+                               17        G      5         0.00E+00          B        F         SB       S    *
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE     7
+                                                                                                                                    
+0                                                                                                            SUBCASE 1              
+0                                         G R I D   P O I N T   S I N G U L A R I T Y   T A B L E
+0                             POINT    TYPE   FAILED      STIFFNESS       OLD USET           NEW USET
+                               ID            DIRECTION      RATIO     EXCLUSIVE  UNION   EXCLUSIVE  UNION
+                               17        G      6         0.00E+00          B        F         SB       S    *
+                               18        G      4         0.00E+00          B        F         SB       S    *
+                               18        G      5         0.00E+00          B        F         SB       S    *
+                               18        G      6         0.00E+00          B        F         SB       S    *
+                               19        G      4         0.00E+00          B        F         SB       S    *
+                               19        G      5         0.00E+00          B        F         SB       S    *
+                               19        G      6         0.00E+00          B        F         SB       S    *
+                               20        G      4         0.00E+00          B        F         SB       S    *
+                               20        G      5         0.00E+00          B        F         SB       S    *
+                               20        G      6         0.00E+00          B        F         SB       S    *
+                               21        G      4         0.00E+00          B        F         SB       S    *
+                               21        G      5         0.00E+00          B        F         SB       S    *
+                               21        G      6         0.00E+00          B        F         SB       S    *
+                               22        G      4         0.00E+00          B        F         SB       S    *
+                               22        G      5         0.00E+00          B        F         SB       S    *
+                               22        G      6         0.00E+00          B        F         SB       S    *
+                               23        G      4         0.00E+00          B        F         SB       S    *
+                               23        G      5         0.00E+00          B        F         SB       S    *
+                               23        G      6         0.00E+00          B        F         SB       S    *
+                               24        G      4         0.00E+00          B        F         SB       S    *
+                               24        G      5         0.00E+00          B        F         SB       S    *
+                               24        G      6         0.00E+00          B        F         SB       S    *
+                               25        G      4         0.00E+00          B        F         SB       S    *
+                               25        G      5         0.00E+00          B        F         SB       S    *
+                               25        G      6         0.00E+00          B        F         SB       S    *
+                               26        G      4         0.00E+00          B        F         SB       S    *
+                               26        G      5         0.00E+00          B        F         SB       S    *
+                               26        G      6         0.00E+00          B        F         SB       S    *
+                               27        G      4         0.00E+00          B        F         SB       S    *
+                               27        G      5         0.00E+00          B        F         SB       S    *
+                               27        G      6         0.00E+00          B        F         SB       S    *
+                               28        G      4         0.00E+00          B        F         SB       S    *
+                               28        G      5         0.00E+00          B        F         SB       S    *
+                               28        G      6         0.00E+00          B        F         SB       S    *
+                               29        G      4         0.00E+00          B        F         SB       S    *
+                               29        G      5         0.00E+00          B        F         SB       S    *
+                               29        G      6         0.00E+00          B        F         SB       S    *
+                               30        G      4         0.00E+00          B        F         SB       S    *
+                               30        G      5         0.00E+00          B        F         SB       S    *
+                               30        G      6         0.00E+00          B        F         SB       S    *
+                               31        G      4         0.00E+00          B        F         SB       S    *
+                               31        G      5         0.00E+00          B        F         SB       S    *
+                               31        G      6         0.00E+00          B        F         SB       S    *
+                               32        G      4         0.00E+00          B        F         SB       S    *
+                               32        G      5         0.00E+00          B        F         SB       S    *
+                               32        G      6         0.00E+00          B        F         SB       S    *
+                               33        G      4         0.00E+00          B        F         SB       S    *
+                               33        G      5         0.00E+00          B        F         SB       S    *
+                               33        G      6         0.00E+00          B        F         SB       S    *
+                               34        G      4         0.00E+00          B        F         SB       S    *
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE     8
+                                                                                                                                    
+0                                                                                                            SUBCASE 1              
+0                                         G R I D   P O I N T   S I N G U L A R I T Y   T A B L E
+0                             POINT    TYPE   FAILED      STIFFNESS       OLD USET           NEW USET
+                               ID            DIRECTION      RATIO     EXCLUSIVE  UNION   EXCLUSIVE  UNION
+                               34        G      5         0.00E+00          B        F         SB       S    *
+                               34        G      6         0.00E+00          B        F         SB       S    *
+                               35        G      4         0.00E+00          B        F         SB       S    *
+                               35        G      5         0.00E+00          B        F         SB       S    *
+                               35        G      6         0.00E+00          B        F         SB       S    *
+                               36        G      4         0.00E+00          B        F         SB       S    *
+                               36        G      5         0.00E+00          B        F         SB       S    *
+                               36        G      6         0.00E+00          B        F         SB       S    *
+                               37        G      4         0.00E+00          B        F         SB       S    *
+                               37        G      5         0.00E+00          B        F         SB       S    *
+                               37        G      6         0.00E+00          B        F         SB       S    *
+                               38        G      4         0.00E+00          B        F         SB       S    *
+                               38        G      5         0.00E+00          B        F         SB       S    *
+                               38        G      6         0.00E+00          B        F         SB       S    *
+                               39        G      4         0.00E+00          B        F         SB       S    *
+                               39        G      5         0.00E+00          B        F         SB       S    *
+                               39        G      6         0.00E+00          B        F         SB       S    *
+                               40        G      4         0.00E+00          B        F         SB       S    *
+                               40        G      5         0.00E+00          B        F         SB       S    *
+                               40        G      6         0.00E+00          B        F         SB       S    *
+                               41        G      4         0.00E+00          B        F         SB       S    *
+                               41        G      5         0.00E+00          B        F         SB       S    *
+                               41        G      6         0.00E+00          B        F         SB       S    *
+                               42        G      4         0.00E+00          B        F         SB       S    *
+                               42        G      5         0.00E+00          B        F         SB       S    *
+                               42        G      6         0.00E+00          B        F         SB       S    *
+                               43        G      4         0.00E+00          B        F         SB       S    *
+                               43        G      5         0.00E+00          B        F         SB       S    *
+                               43        G      6         0.00E+00          B        F         SB       S    *
+                               44        G      4         0.00E+00          B        F         SB       S    *
+                               44        G      5         0.00E+00          B        F         SB       S    *
+                               44        G      6         0.00E+00          B        F         SB       S    *
+                               45        G      4         0.00E+00          B        F         SB       S    *
+                               45        G      5         0.00E+00          B        F         SB       S    *
+                               45        G      6         0.00E+00          B        F         SB       S    *
+                               46        G      4         0.00E+00          B        F         SB       S    *
+                               46        G      5         0.00E+00          B        F         SB       S    *
+                               46        G      6         0.00E+00          B        F         SB       S    *
+                               47        G      4         0.00E+00          B        F         SB       S    *
+                               47        G      5         0.00E+00          B        F         SB       S    *
+                               47        G      6         0.00E+00          B        F         SB       S    *
+                               48        G      4         0.00E+00          B        F         SB       S    *
+                               48        G      5         0.00E+00          B        F         SB       S    *
+                               48        G      6         0.00E+00          B        F         SB       S    *
+                               49        G      4         0.00E+00          B        F         SB       S    *
+                               49        G      5         0.00E+00          B        F         SB       S    *
+                               49        G      6         0.00E+00          B        F         SB       S    *
+                               50        G      4         0.00E+00          B        F         SB       S    *
+                               50        G      5         0.00E+00          B        F         SB       S    *
+                               50        G      6         0.00E+00          B        F         SB       S    *
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE     9
+                                                                                                                                    
+0                                                                                                            SUBCASE 1              
+0                                         G R I D   P O I N T   S I N G U L A R I T Y   T A B L E
+0                             POINT    TYPE   FAILED      STIFFNESS       OLD USET           NEW USET
+                               ID            DIRECTION      RATIO     EXCLUSIVE  UNION   EXCLUSIVE  UNION
+                               51        G      4         0.00E+00          B        F         SB       S    *
+                               51        G      5         0.00E+00          B        F         SB       S    *
+                               51        G      6         0.00E+00          B        F         SB       S    *
+                               52        G      4         0.00E+00          B        F         SB       S    *
+                               52        G      5         0.00E+00          B        F         SB       S    *
+                               52        G      6         0.00E+00          B        F         SB       S    *
+                               53        G      4         0.00E+00          B        F         SB       S    *
+                               53        G      5         0.00E+00          B        F         SB       S    *
+                               53        G      6         0.00E+00          B        F         SB       S    *
+                               54        G      4         0.00E+00          B        F         SB       S    *
+                               54        G      5         0.00E+00          B        F         SB       S    *
+                               54        G      6         0.00E+00          B        F         SB       S    *
+                               55        G      4         0.00E+00          B        F         SB       S    *
+                               55        G      5         0.00E+00          B        F         SB       S    *
+                               55        G      6         0.00E+00          B        F         SB       S    *
+                               56        G      4         0.00E+00          B        F         SB       S    *
+                               56        G      5         0.00E+00          B        F         SB       S    *
+                               56        G      6         0.00E+00          B        F         SB       S    *
+                               57        G      4         0.00E+00          B        F         SB       S    *
+                               57        G      5         0.00E+00          B        F         SB       S    *
+                               57        G      6         0.00E+00          B        F         SB       S    *
+                               58        G      4         0.00E+00          B        F         SB       S    *
+                               58        G      5         0.00E+00          B        F         SB       S    *
+                               58        G      6         0.00E+00          B        F         SB       S    *
+                               59        G      4         0.00E+00          B        F         SB       S    *
+                               59        G      5         0.00E+00          B        F         SB       S    *
+                               59        G      6         0.00E+00          B        F         SB       S    *
+                               60        G      4         0.00E+00          B        F         SB       S    *
+                               60        G      5         0.00E+00          B        F         SB       S    *
+                               60        G      6         0.00E+00          B        F         SB       S    *
+                               61        G      4         0.00E+00          B        F         SB       S    *
+                               61        G      5         0.00E+00          B        F         SB       S    *
+                               61        G      6         0.00E+00          B        F         SB       S    *
+                               62        G      4         0.00E+00          B        F         SB       S    *
+                               62        G      5         0.00E+00          B        F         SB       S    *
+                               62        G      6         0.00E+00          B        F         SB       S    *
+                               63        G      4         0.00E+00          B        F         SB       S    *
+                               63        G      5         0.00E+00          B        F         SB       S    *
+                               63        G      6         0.00E+00          B        F         SB       S    *
+                               64        G      4         0.00E+00          B        F         SB       S    *
+                               64        G      5         0.00E+00          B        F         SB       S    *
+                               64        G      6         0.00E+00          B        F         SB       S    *
+                               65        G      4         0.00E+00          B        F         SB       S    *
+                               65        G      5         0.00E+00          B        F         SB       S    *
+                               65        G      6         0.00E+00          B        F         SB       S    *
+                               66        G      4         0.00E+00          B        F         SB       S    *
+                               66        G      5         0.00E+00          B        F         SB       S    *
+                               66        G      6         0.00E+00          B        F         SB       S    *
+                               67        G      4         0.00E+00          B        F         SB       S    *
+                               67        G      5         0.00E+00          B        F         SB       S    *
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE    10
+                                                                                                                                    
+0                                                                                                            SUBCASE 1              
+0                                         G R I D   P O I N T   S I N G U L A R I T Y   T A B L E
+0                             POINT    TYPE   FAILED      STIFFNESS       OLD USET           NEW USET
+                               ID            DIRECTION      RATIO     EXCLUSIVE  UNION   EXCLUSIVE  UNION
+                               67        G      6         0.00E+00          B        F         SB       S    *
+                               68        G      4         0.00E+00          B        F         SB       S    *
+                               68        G      5         0.00E+00          B        F         SB       S    *
+                               68        G      6         0.00E+00          B        F         SB       S    *
+                               69        G      4         0.00E+00          B        F         SB       S    *
+                               69        G      5         0.00E+00          B        F         SB       S    *
+                               69        G      6         0.00E+00          B        F         SB       S    *
+                               70        G      4         0.00E+00          B        F         SB       S    *
+                               70        G      5         0.00E+00          B        F         SB       S    *
+                               70        G      6         0.00E+00          B        F         SB       S    *
+                               71        G      4         0.00E+00          B        F         SB       S    *
+                               71        G      5         0.00E+00          B        F         SB       S    *
+                               71        G      6         0.00E+00          B        F         SB       S    *
+                               72        G      4         0.00E+00          B        F         SB       S    *
+                               72        G      5         0.00E+00          B        F         SB       S    *
+                               72        G      6         0.00E+00          B        F         SB       S    *
+                               73        G      4         0.00E+00          B        F         SB       S    *
+                               73        G      5         0.00E+00          B        F         SB       S    *
+                               73        G      6         0.00E+00          B        F         SB       S    *
+                               74        G      4         0.00E+00          B        F         SB       S    *
+                               74        G      5         0.00E+00          B        F         SB       S    *
+                               74        G      6         0.00E+00          B        F         SB       S    *
+                               75        G      4         0.00E+00          B        F         SB       S    *
+                               75        G      5         0.00E+00          B        F         SB       S    *
+                               75        G      6         0.00E+00          B        F         SB       S    *
+                               76        G      4         0.00E+00          B        F         SB       S    *
+                               76        G      5         0.00E+00          B        F         SB       S    *
+                               76        G      6         0.00E+00          B        F         SB       S    *
+                               77        G      4         0.00E+00          B        F         SB       S    *
+                               77        G      5         0.00E+00          B        F         SB       S    *
+                               77        G      6         0.00E+00          B        F         SB       S    *
+                               78        G      4         0.00E+00          B        F         SB       S    *
+                               78        G      5         0.00E+00          B        F         SB       S    *
+                               78        G      6         0.00E+00          B        F         SB       S    *
+                               79        G      4         0.00E+00          B        F         SB       S    *
+                               79        G      5         0.00E+00          B        F         SB       S    *
+                               79        G      6         0.00E+00          B        F         SB       S    *
+                               80        G      4         0.00E+00          B        F         SB       S    *
+                               80        G      5         0.00E+00          B        F         SB       S    *
+                               80        G      6         0.00E+00          B        F         SB       S    *
+                               81        G      4         0.00E+00          B        F         SB       S    *
+                               81        G      5         0.00E+00          B        F         SB       S    *
+                               81        G      6         0.00E+00          B        F         SB       S    *
+                               82        G      4         0.00E+00          B        F         SB       S    *
+                               82        G      5         0.00E+00          B        F         SB       S    *
+                               82        G      6         0.00E+00          B        F         SB       S    *
+                               83        G      4         0.00E+00          B        F         SB       S    *
+                               83        G      5         0.00E+00          B        F         SB       S    *
+                               83        G      6         0.00E+00          B        F         SB       S    *
+                               84        G      4         0.00E+00          B        F         SB       S    *
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE    11
+                                                                                                                                    
+0                                                                                                            SUBCASE 1              
+0                                         G R I D   P O I N T   S I N G U L A R I T Y   T A B L E
+0                             POINT    TYPE   FAILED      STIFFNESS       OLD USET           NEW USET
+                               ID            DIRECTION      RATIO     EXCLUSIVE  UNION   EXCLUSIVE  UNION
+                               84        G      5         0.00E+00          B        F         SB       S    *
+                               84        G      6         0.00E+00          B        F         SB       S    *
+                               85        G      4         0.00E+00          B        F         SB       S    *
+                               85        G      5         0.00E+00          B        F         SB       S    *
+                               85        G      6         0.00E+00          B        F         SB       S    *
+                               86        G      4         0.00E+00          B        F         SB       S    *
+                               86        G      5         0.00E+00          B        F         SB       S    *
+                               86        G      6         0.00E+00          B        F         SB       S    *
+                               87        G      4         0.00E+00          B        F         SB       S    *
+                               87        G      5         0.00E+00          B        F         SB       S    *
+                               87        G      6         0.00E+00          B        F         SB       S    *
+                               88        G      4         0.00E+00          B        F         SB       S    *
+                               88        G      5         0.00E+00          B        F         SB       S    *
+                               88        G      6         0.00E+00          B        F         SB       S    *
+                               89        G      4         0.00E+00          B        F         SB       S    *
+                               89        G      5         0.00E+00          B        F         SB       S    *
+                               89        G      6         0.00E+00          B        F         SB       S    *
+                               90        G      4         0.00E+00          B        F         SB       S    *
+                               90        G      5         0.00E+00          B        F         SB       S    *
+                               90        G      6         0.00E+00          B        F         SB       S    *
+                               91        G      4         0.00E+00          B        F         SB       S    *
+                               91        G      5         0.00E+00          B        F         SB       S    *
+                               91        G      6         0.00E+00          B        F         SB       S    *
+                               92        G      4         0.00E+00          B        F         SB       S    *
+                               92        G      5         0.00E+00          B        F         SB       S    *
+                               92        G      6         0.00E+00          B        F         SB       S    *
+                               93        G      4         0.00E+00          B        F         SB       S    *
+                               93        G      5         0.00E+00          B        F         SB       S    *
+                               93        G      6         0.00E+00          B        F         SB       S    *
+                               94        G      4         0.00E+00          B        F         SB       S    *
+                               94        G      5         0.00E+00          B        F         SB       S    *
+                               94        G      6         0.00E+00          B        F         SB       S    *
+                               95        G      4         0.00E+00          B        F         SB       S    *
+                               95        G      5         0.00E+00          B        F         SB       S    *
+                               95        G      6         0.00E+00          B        F         SB       S    *
+                               96        G      4         0.00E+00          B        F         SB       S    *
+                               96        G      5         0.00E+00          B        F         SB       S    *
+                               96        G      6         0.00E+00          B        F         SB       S    *
+                               97        G      4         0.00E+00          B        F         SB       S    *
+                               97        G      5         0.00E+00          B        F         SB       S    *
+                               97        G      6         0.00E+00          B        F         SB       S    *
+                               98        G      4         0.00E+00          B        F         SB       S    *
+                               98        G      5         0.00E+00          B        F         SB       S    *
+                               98        G      6         0.00E+00          B        F         SB       S    *
+                               99        G      4         0.00E+00          B        F         SB       S    *
+                               99        G      5         0.00E+00          B        F         SB       S    *
+                               99        G      6         0.00E+00          B        F         SB       S    *
+                              100        G      4         0.00E+00          B        F         SB       S    *
+                              100        G      5         0.00E+00          B        F         SB       S    *
+                              100        G      6         0.00E+00          B        F         SB       S    *
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE    12
+                                                                                                                                    
+0                                                                                                            SUBCASE 1              
+0                                         G R I D   P O I N T   S I N G U L A R I T Y   T A B L E
+0                             POINT    TYPE   FAILED      STIFFNESS       OLD USET           NEW USET
+                               ID            DIRECTION      RATIO     EXCLUSIVE  UNION   EXCLUSIVE  UNION
+                              101        G      4         0.00E+00          B        F         SB       S    *
+                              101        G      5         0.00E+00          B        F         SB       S    *
+                              101        G      6         0.00E+00          B        F         SB       S    *
+                              102        G      4         0.00E+00          B        F         SB       S    *
+                              102        G      5         0.00E+00          B        F         SB       S    *
+                              102        G      6         0.00E+00          B        F         SB       S    *
+                              103        G      4         0.00E+00          B        F         SB       S    *
+                              103        G      5         0.00E+00          B        F         SB       S    *
+                              103        G      6         0.00E+00          B        F         SB       S    *
+                              104        G      4         0.00E+00          B        F         SB       S    *
+                              104        G      5         0.00E+00          B        F         SB       S    *
+                              104        G      6         0.00E+00          B        F         SB       S    *
+                              105        G      4         0.00E+00          B        F         SB       S    *
+                              105        G      5         0.00E+00          B        F         SB       S    *
+                              105        G      6         0.00E+00          B        F         SB       S    *
+                              106        G      4         0.00E+00          B        F         SB       S    *
+                              106        G      5         0.00E+00          B        F         SB       S    *
+                              106        G      6         0.00E+00          B        F         SB       S    *
+                              107        G      4         0.00E+00          B        F         SB       S    *
+                              107        G      5         0.00E+00          B        F         SB       S    *
+                              107        G      6         0.00E+00          B        F         SB       S    *
+                              108        G      4         0.00E+00          B        F         SB       S    *
+                              108        G      5         0.00E+00          B        F         SB       S    *
+                              108        G      6         0.00E+00          B        F         SB       S    *
+                              109        G      4         0.00E+00          B        F         SB       S    *
+                              109        G      5         0.00E+00          B        F         SB       S    *
+                              109        G      6         0.00E+00          B        F         SB       S    *
+                              110        G      4         0.00E+00          B        F         SB       S    *
+                              110        G      5         0.00E+00          B        F         SB       S    *
+                              110        G      6         0.00E+00          B        F         SB       S    *
+                              111        G      4         0.00E+00          B        F         SB       S    *
+                              111        G      5         0.00E+00          B        F         SB       S    *
+                              111        G      6         0.00E+00          B        F         SB       S    *
+                              112        G      4         0.00E+00          B        F         SB       S    *
+                              112        G      5         0.00E+00          B        F         SB       S    *
+                              112        G      6         0.00E+00          B        F         SB       S    *
+                              113        G      4         0.00E+00          B        F         SB       S    *
+                              113        G      5         0.00E+00          B        F         SB       S    *
+                              113        G      6         0.00E+00          B        F         SB       S    *
+                              114        G      4         0.00E+00          B        F         SB       S    *
+                              114        G      5         0.00E+00          B        F         SB       S    *
+                              114        G      6         0.00E+00          B        F         SB       S    *
+                              115        G      4         0.00E+00          B        F         SB       S    *
+                              115        G      5         0.00E+00          B        F         SB       S    *
+                              115        G      6         0.00E+00          B        F         SB       S    *
+                              116        G      4         0.00E+00          B        F         SB       S    *
+                              116        G      5         0.00E+00          B        F         SB       S    *
+                              116        G      6         0.00E+00          B        F         SB       S    *
+                              117        G      4         0.00E+00          B        F         SB       S    *
+                              117        G      5         0.00E+00          B        F         SB       S    *
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE    13
+                                                                                                                                    
+0                                                                                                            SUBCASE 1              
+0                                         G R I D   P O I N T   S I N G U L A R I T Y   T A B L E
+0                             POINT    TYPE   FAILED      STIFFNESS       OLD USET           NEW USET
+                               ID            DIRECTION      RATIO     EXCLUSIVE  UNION   EXCLUSIVE  UNION
+                              117        G      6         0.00E+00          B        F         SB       S    *
+                              118        G      4         0.00E+00          B        F         SB       S    *
+                              118        G      5         0.00E+00          B        F         SB       S    *
+                              118        G      6         0.00E+00          B        F         SB       S    *
+                              119        G      4         0.00E+00          B        F         SB       S    *
+                              119        G      5         0.00E+00          B        F         SB       S    *
+                              119        G      6         0.00E+00          B        F         SB       S    *
+                              120        G      4         0.00E+00          B        F         SB       S    *
+                              120        G      5         0.00E+00          B        F         SB       S    *
+                              120        G      6         0.00E+00          B        F         SB       S    *
+                              121        G      4         0.00E+00          B        F         SB       S    *
+                              121        G      5         0.00E+00          B        F         SB       S    *
+                              121        G      6         0.00E+00          B        F         SB       S    *
+                              122        G      4         0.00E+00          B        F         SB       S    *
+                              122        G      5         0.00E+00          B        F         SB       S    *
+                              122        G      6         0.00E+00          B        F         SB       S    *
+                              123        G      4         0.00E+00          B        F         SB       S    *
+                              123        G      5         0.00E+00          B        F         SB       S    *
+                              123        G      6         0.00E+00          B        F         SB       S    *
+                              124        G      4         0.00E+00          B        F         SB       S    *
+                              124        G      5         0.00E+00          B        F         SB       S    *
+                              124        G      6         0.00E+00          B        F         SB       S    *
+                              125        G      4         0.00E+00          B        F         SB       S    *
+                              125        G      5         0.00E+00          B        F         SB       S    *
+                              125        G      6         0.00E+00          B        F         SB       S    *
+                              126        G      4         0.00E+00          B        F         SB       S    *
+                              126        G      5         0.00E+00          B        F         SB       S    *
+                              126        G      6         0.00E+00          B        F         SB       S    *
+                              127        G      4         0.00E+00          B        F         SB       S    *
+                              127        G      5         0.00E+00          B        F         SB       S    *
+                              127        G      6         0.00E+00          B        F         SB       S    *
+                              128        G      4         0.00E+00          B        F         SB       S    *
+                              128        G      5         0.00E+00          B        F         SB       S    *
+                              128        G      6         0.00E+00          B        F         SB       S    *
+                              129        G      4         0.00E+00          B        F         SB       S    *
+                              129        G      5         0.00E+00          B        F         SB       S    *
+                              129        G      6         0.00E+00          B        F         SB       S    *
+                              130        G      4         0.00E+00          B        F         SB       S    *
+                              130        G      5         0.00E+00          B        F         SB       S    *
+                              130        G      6         0.00E+00          B        F         SB       S    *
+                              131        G      4         0.00E+00          B        F         SB       S    *
+                              131        G      5         0.00E+00          B        F         SB       S    *
+                              131        G      6         0.00E+00          B        F         SB       S    *
+                              132        G      4         0.00E+00          B        F         SB       S    *
+                              132        G      5         0.00E+00          B        F         SB       S    *
+                              132        G      6         0.00E+00          B        F         SB       S    *
+                              133        G      4         0.00E+00          B        F         SB       S    *
+                              133        G      5         0.00E+00          B        F         SB       S    *
+                              133        G      6         0.00E+00          B        F         SB       S    *
+                              134        G      4         0.00E+00          B        F         SB       S    *
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE    14
+                                                                                                                                    
+0                                                                                                            SUBCASE 1              
+0                                         G R I D   P O I N T   S I N G U L A R I T Y   T A B L E
+0                             POINT    TYPE   FAILED      STIFFNESS       OLD USET           NEW USET
+                               ID            DIRECTION      RATIO     EXCLUSIVE  UNION   EXCLUSIVE  UNION
+                              134        G      5         0.00E+00          B        F         SB       S    *
+                              134        G      6         0.00E+00          B        F         SB       S    *
+                              135        G      4         0.00E+00          B        F         SB       S    *
+                              135        G      5         0.00E+00          B        F         SB       S    *
+                              135        G      6         0.00E+00          B        F         SB       S    *
+                              136        G      4         0.00E+00          B        F         SB       S    *
+                              136        G      5         0.00E+00          B        F         SB       S    *
+                              136        G      6         0.00E+00          B        F         SB       S    *
+                              137        G      4         0.00E+00          B        F         SB       S    *
+                              137        G      5         0.00E+00          B        F         SB       S    *
+                              137        G      6         0.00E+00          B        F         SB       S    *
+                              138        G      4         0.00E+00          B        F         SB       S    *
+                              138        G      5         0.00E+00          B        F         SB       S    *
+                              138        G      6         0.00E+00          B        F         SB       S    *
+                              139        G      4         0.00E+00          B        F         SB       S    *
+                              139        G      5         0.00E+00          B        F         SB       S    *
+                              139        G      6         0.00E+00          B        F         SB       S    *
+                              140        G      4         0.00E+00          B        F         SB       S    *
+                              140        G      5         0.00E+00          B        F         SB       S    *
+                              140        G      6         0.00E+00          B        F         SB       S    *
+                              141        G      4         0.00E+00          B        F         SB       S    *
+                              141        G      5         0.00E+00          B        F         SB       S    *
+                              141        G      6         0.00E+00          B        F         SB       S    *
+                              142        G      4         0.00E+00          B        F         SB       S    *
+                              142        G      5         0.00E+00          B        F         SB       S    *
+                              142        G      6         0.00E+00          B        F         SB       S    *
+                              143        G      4         0.00E+00          B        F         SB       S    *
+                              143        G      5         0.00E+00          B        F         SB       S    *
+                              143        G      6         0.00E+00          B        F         SB       S    *
+                              144        G      4         0.00E+00          B        F         SB       S    *
+                              144        G      5         0.00E+00          B        F         SB       S    *
+                              144        G      6         0.00E+00          B        F         SB       S    *
+                              145        G      4         0.00E+00          B        F         SB       S    *
+                              145        G      5         0.00E+00          B        F         SB       S    *
+                              145        G      6         0.00E+00          B        F         SB       S    *
+                              146        G      4         0.00E+00          B        F         SB       S    *
+                              146        G      5         0.00E+00          B        F         SB       S    *
+                              146        G      6         0.00E+00          B        F         SB       S    *
+                              147        G      4         0.00E+00          B        F         SB       S    *
+                              147        G      5         0.00E+00          B        F         SB       S    *
+                              147        G      6         0.00E+00          B        F         SB       S    *
+                              148        G      4         0.00E+00          B        F         SB       S    *
+                              148        G      5         0.00E+00          B        F         SB       S    *
+                              148        G      6         0.00E+00          B        F         SB       S    *
+                              149        G      4         0.00E+00          B        F         SB       S    *
+                              149        G      5         0.00E+00          B        F         SB       S    *
+                              149        G      6         0.00E+00          B        F         SB       S    *
+                              150        G      4         0.00E+00          B        F         SB       S    *
+                              150        G      5         0.00E+00          B        F         SB       S    *
+                              150        G      6         0.00E+00          B        F         SB       S    *
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE    15
+                                                                                                                                    
+0                                                                                                            SUBCASE 1              
+0                                         G R I D   P O I N T   S I N G U L A R I T Y   T A B L E
+0                             POINT    TYPE   FAILED      STIFFNESS       OLD USET           NEW USET
+                               ID            DIRECTION      RATIO     EXCLUSIVE  UNION   EXCLUSIVE  UNION
+                              151        G      4         0.00E+00          B        F         SB       S    *
+                              151        G      5         0.00E+00          B        F         SB       S    *
+                              151        G      6         0.00E+00          B        F         SB       S    *
+                              152        G      4         0.00E+00          B        F         SB       S    *
+                              152        G      5         0.00E+00          B        F         SB       S    *
+                              152        G      6         0.00E+00          B        F         SB       S    *
+                              153        G      4         0.00E+00          B        F         SB       S    *
+                              153        G      5         0.00E+00          B        F         SB       S    *
+                              153        G      6         0.00E+00          B        F         SB       S    *
+                              154        G      4         0.00E+00          B        F         SB       S    *
+                              154        G      5         0.00E+00          B        F         SB       S    *
+                              154        G      6         0.00E+00          B        F         SB       S    *
+                              155        G      4         0.00E+00          B        F         SB       S    *
+                              155        G      5         0.00E+00          B        F         SB       S    *
+                              155        G      6         0.00E+00          B        F         SB       S    *
+                              156        G      4         0.00E+00          B        F         SB       S    *
+                              156        G      5         0.00E+00          B        F         SB       S    *
+                              156        G      6         0.00E+00          B        F         SB       S    *
+                              157        G      4         0.00E+00          B        F         SB       S    *
+                              157        G      5         0.00E+00          B        F         SB       S    *
+                              157        G      6         0.00E+00          B        F         SB       S    *
+                              158        G      4         0.00E+00          B        F         SB       S    *
+                              158        G      5         0.00E+00          B        F         SB       S    *
+                              158        G      6         0.00E+00          B        F         SB       S    *
+                              159        G      4         0.00E+00          B        F         SB       S    *
+                              159        G      5         0.00E+00          B        F         SB       S    *
+                              159        G      6         0.00E+00          B        F         SB       S    *
+                              160        G      4         0.00E+00          B        F         SB       S    *
+                              160        G      5         0.00E+00          B        F         SB       S    *
+                              160        G      6         0.00E+00          B        F         SB       S    *
+                              161        G      4         0.00E+00          B        F         SB       S    *
+                              161        G      5         0.00E+00          B        F         SB       S    *
+                              161        G      6         0.00E+00          B        F         SB       S    *
+                              162        G      4         0.00E+00          B        F         SB       S    *
+                              162        G      5         0.00E+00          B        F         SB       S    *
+                              162        G      6         0.00E+00          B        F         SB       S    *
+                              163        G      4         0.00E+00          B        F         SB       S    *
+                              163        G      5         0.00E+00          B        F         SB       S    *
+                              163        G      6         0.00E+00          B        F         SB       S    *
+                              164        G      4         0.00E+00          B        F         SB       S    *
+                              164        G      5         0.00E+00          B        F         SB       S    *
+                              164        G      6         0.00E+00          B        F         SB       S    *
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE    16
+                                                                                                                                    
+0                                                                                                            SUBCASE 1              
+  
+ *** SYSTEM INFORMATION MESSAGE 4159 (DFMSA)
+     THE DECOMPOSITION OF KLL      YIELDS A MAXIMUM MATRIX-TO-FACTOR-DIAGONAL RATIO OF    8.794142E+01
+ *** USER INFORMATION MESSAGE 5293 (SSG3A)
+    FOR DATA BLOCK KLL     
+    LOAD SEQ. NO.             EPSILON              EXTERNAL WORK      EPSILONS LARGER THAN 0.001 ARE FLAGGED WITH ASTERISKS
+                1         -4.7288534E-11          1.0753818E-01
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE    17
+                                                                                                                                    
+0                                                                                                                                   
+0                                                  MAXIMUM  DISPLACEMENTS   
+  SUBCASE/
+  DAREA ID        T1             T2             T3             R1             R2             R3
+0        1   2.8919899E-04  2.0578962E-04  1.2637291E-02  0.0000000E+00  0.0000000E+00  0.0000000E+00
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE    18
+                                                                                                                                    
+0                                                                                                                                   
+0                                                  MAXIMUM  APPLIED LOADS   
+  SUBCASE/
+  DAREA ID        T1             T2             T3             R1             R2             R3
+0        1   0.0000000E+00  0.0000000E+00  2.8881773E-01  0.0000000E+00  0.0000000E+00  0.0000000E+00
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE    19
+     DEFAULT                                                                                                                        
+0                                                                                                            SUBCASE 1              
+ 
+                                                     L O A D   V E C T O R
+ 
+      POINT ID.   TYPE          T1             T2             T3             R1             R2             R3
+             1      G      0.0            0.0            7.790920E-02   0.0            0.0            0.0
+             2      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+             3      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+             4      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+             5      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+             6      G      0.0            0.0            7.790920E-02   0.0            0.0            0.0
+             7      G      0.0            0.0            7.790920E-02   0.0            0.0            0.0
+             8      G      0.0            0.0            7.790920E-02   0.0            0.0            0.0
+             9      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            10      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            11      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            12      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            13      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            14      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            15      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            16      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            17      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            18      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            19      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            20      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            21      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            22      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            23      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            24      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            25      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            26      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            27      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            28      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            29      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            30      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            31      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            32      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            33      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            34      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            35      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            36      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            37      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            38      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            39      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            40      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            41      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            42      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            43      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            44      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            45      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            46      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            47      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            48      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            49      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            50      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE    20
+     DEFAULT                                                                                                                        
+0                                                                                                            SUBCASE 1              
+ 
+                                                     L O A D   V E C T O R
+ 
+      POINT ID.   TYPE          T1             T2             T3             R1             R2             R3
+            51      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            52      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            53      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            54      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            55      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            56      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            57      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            58      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            59      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            60      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            61      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            62      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            63      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            64      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            65      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            66      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            67      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            68      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            69      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            70      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            71      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            72      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            73      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            74      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            75      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            76      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            77      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            78      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            79      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            80      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            81      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            82      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            83      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            84      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            85      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            86      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            87      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            88      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            89      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            90      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            91      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            92      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            93      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            94      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            95      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            96      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            97      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+            98      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+            99      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           100      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE    21
+     DEFAULT                                                                                                                        
+0                                                                                                            SUBCASE 1              
+ 
+                                                     L O A D   V E C T O R
+ 
+      POINT ID.   TYPE          T1             T2             T3             R1             R2             R3
+           101      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           102      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           103      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           104      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           105      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           106      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           107      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           108      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           109      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           110      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           111      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           112      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           113      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           114      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           115      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           116      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           117      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           118      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           119      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           120      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           121      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           122      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           123      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           124      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           125      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           126      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           127      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           128      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           129      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           130      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           131      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           132      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           133      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           134      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           135      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           136      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           137      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           138      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           139      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           140      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           141      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           142      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           143      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           144      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           145      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           146      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           147      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           148      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           149      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           150      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE    22
+     DEFAULT                                                                                                                        
+0                                                                                                            SUBCASE 1              
+ 
+                                                     L O A D   V E C T O R
+ 
+      POINT ID.   TYPE          T1             T2             T3             R1             R2             R3
+           151      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           152      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           153      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           154      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           155      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           156      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           157      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           158      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           159      G      0.0            0.0            2.888177E-01   0.0            0.0            0.0
+           160      G      0.0            0.0            2.337276E-01   0.0            0.0            0.0
+           161      G      0.0            0.0            1.558184E-01   0.0            0.0            0.0
+           162      G      0.0            0.0            2.109085E-01   0.0            0.0            0.0
+           163      G      0.0            0.0            2.109085E-01   0.0            0.0            0.0
+           164      G      0.0            0.0            1.558184E-01   0.0            0.0            0.0
+ *** USER INFORMATION MESSAGE 3 (crdb::nastran::Processor::writeOutput)
+ *** USER INFORMATION MESSAGE  (WRITE DATA BLOCK OPG1, TRAILER[101, 0, 1312, 0, 0, 0, 1])
+1    MSC.NASTRAN JOB CREATED ON 03-NOV-21 AT 19:56:27                           MAY  19, 2022  MSC Nastran 12/18/18   PAGE    23
+                                                                                                                                    
+0                                                                                                                                   
+ * * * *  D B D I C T   P R I N T  * * * *      SUBDMAP = PRTSUM  ,  DMAP STATEMENT NO.     71
+
+
+
+0                                   * * * *  A N A L Y S I S  S U M M A R Y  T A B L E  * * * *
+0 SEID  PEID PROJ VERS APRCH      SEMG SEMR SEKR SELG SELR MODES DYNRED SOLLIN PVALID SOLNL LOOPID DESIGN CYCLE SENSITIVITY
+ --------------------------------------------------------------------------------------------------------------------------
+     0     0    1    1 '        '    T    T    T    T    T     F      F      T      0     F     -1            0           F
+0SEID = SUPERELEMENT ID.
+ PEID = PRIMARY SUPERELEMENT ID OF IMAGE SUPERELEMENT.
+ PROJ = PROJECT ID NUMBER.
+ VERS = VERSION ID.
+ APRCH = BLANK FOR STRUCTURAL ANALYSIS.  HEAT FOR HEAT TRANSFER ANALYSIS.
+ SEMG = STIFFNESS AND MASS MATRIX GENERATION STEP.
+ SEMR = MASS MATRIX REDUCTION STEP (INCLUDES EIGENVALUE SOLUTION FOR MODES).
+ SEKR = STIFFNESS MATRIX REDUCTION STEP.
+ SELG = LOAD MATRIX GENERATION STEP.
+ SELR = LOAD MATRIX REDUCTION STEP. 
+ MODES = T (TRUE) IF NORMAL MODES OR BUCKLING MODES CALCULATED.
+ DYNRED = T (TRUE) MEANS GENERALIZED DYNAMIC AND/OR COMPONENT MODE REDUCTION PERFORMED.
+ SOLLIN = T (TRUE) IF LINEAR SOLUTION EXISTS IN DATABASE.
+ PVALID = P-DISTRIBUTION ID OF P-VALUE FOR P-ELEMENTS
+ LOOPID = THE LAST LOOPID VALUE USED IN THE NONLINEAR ANALYSIS.  USEFUL FOR RESTARTS.
+ SOLNL = T (TRUE) IF NONLINEAR SOLUTION EXISTS IN DATABASE.
+ DESIGN CYCLE = THE LAST DESIGN CYCLE (ONLY VALID IN OPTIMIZATION).
+ SENSITIVITY = SENSITIVITY MATRIX GENERATION FLAG.
+ 
+ No PARAM values were set in the Control File.
+ 
+1                                        * * * END OF JOB * * *
+ 
+ 
+ No Symbolic Replacement variables or values were specified.
+
