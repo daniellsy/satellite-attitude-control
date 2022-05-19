@@ -1,13 +1,19 @@
 clear;clc;
-load para.mat;load couple.mat;load delta.mat;
-Af=A;
-% J=[210 0 0;...
-%   0  4200 0;...
-%   0  0 4800];
+% load para1.mat;load couple1.mat;
+% load delta.mat;
+% Af=A1;
 % J=[3.497673e6 -2.643113e4 -3.377337e1;...
 %   -2.643113e4  2.629181e4 6.409160e-1;...
-%   -3.377337e1  6.409160e-1 3.509507e6];
-J=inv(eye(3)-delta)*(H*H');
+%    -3.377337e1  6.409160e-1 3.509507e6];
+load para.mat;load couple.mat;
+load delta.mat;
+Af=A;
+J=[6 0 0;...
+  0  4000 -10;...
+  0  -10 3500];
+
+% delta=inv(J)*H*H';save delta.mat delta;
+% J=(H*H')*inv(delta);
 Jn=J-H*H';
 Jnn=inv(Jn);
 A=zeros(23,23);
