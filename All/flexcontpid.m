@@ -6,11 +6,10 @@ clear;clc;
 %   -2.643113e4  2.629181e4 6.409160e-1;...
 %    -3.377337e1  6.409160e-1 3.509507e6];
 load para.mat;load couple.mat;
-load delta.mat;
 Af=A;
-J=[6 0 0;...
-  0  4000 -10;...
-  0  -10 3500];
+J=[  8.570560E+01  2.493295E+02  2.493295E+02;...
+  2.493295E+02    4.330051E+04 -4.173091E+01;...
+  2.493295E+02  -4.173091E+01   4.330051E+04];
 
 % delta=inv(J)*H*H';save delta.mat delta;
 % J=(H*H')*inv(delta);
@@ -23,7 +22,7 @@ mc{2,1}=[-H';Cg*H'];
 mc{1,1}=Jn\(-H*Cg*H');
 mc{1,2}=[Jn\(H*Kg) Jn\(H*Cg)];
 A=cell2mat(mc);
-w0=0.0011;kesi=1;tn=100;
+w0=0.0011;kesi=1;tn=300;
 %计算固有频率
 wn=10/(kesi*tn);
 %%%%%%%%%%%%%%控制率设计
@@ -54,7 +53,7 @@ nksi=length(Af)/2;
 y(:,1)=zeros(23,1);
 y(1:3,1)=w(:,1);
 h=0.01;i=1;
- for j=0:h:100
+ for j=0:h:300
 t(i)=j;
 base_qd(1)=cos(w0*t(i)/2);
 base_qd(2)=sin(w0*t(i)/2);
@@ -119,13 +118,13 @@ i=i+1;
 wb(:,i)=[];
 y(:,i)=[];
 plot(t,wb);
-xlabel('t/s');ylabel('rad/s');%title('随时间变化曲线');
+xlabel('t/s');ylabel('rad/s');title('本体角速度');
 z=fi(6*(outnum-1)+3,:)*y(4:13,:);
 % x(i)=coord(6*(outnum-1)+outn,:);
 % y1(i)=coord(6*(outnum-1)+2,:);
 figure(2)
 plot(t,M);
-xlabel('t/s');ylabel('Nm');
+xlabel('t/s');ylabel('Nm');title('姿态控制力矩');
 figure(3)
 plot(t,sita_ctrl_eff);
 xlabel('t/s');ylabel('°');
