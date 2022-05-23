@@ -4,7 +4,7 @@ nksi=size(ORDER,1);%模态数
 for i=1:nksi
     omega(i,i)=2*pi*ORDER(i,2);               %omega对角阵
     omega2(i,i)=(2*pi*ORDER(i,2))^2;          %omega平方对角阵
-    zeta(i,i)=0.01;                      %z阻尼比矩阵系数
+    zeta(i,i)=0.005;                      %z阻尼比矩阵系数
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%状态空间参数求值
 % omega(1:6,:)=0;
