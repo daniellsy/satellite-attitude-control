@@ -17,7 +17,7 @@ clear;clc;
 %     -34.3793365768584,34.1457185760642,7.08164069589634,5.98699727969080,-2.77555756156289e-16,-3.22777758046563,-1.98384657557733,4.50850428657112e-08,6.23626673149080e-08,-2.03985710253562;
 %     34.1476723588015,34.3777642647627,-5.98982651708458,7.08003834356072,0,1.98716297085105,-3.22708804670698,1.30001029163829e-07,-3.28293805994251e-08,0.747600117226127];
 
-load para.mat;
+load para.mat;load A1.mat;
 Af=A;
 J=[  5600   0  0;...
   0    5400 0;...
@@ -37,7 +37,7 @@ mc{2,1}=[-H';Cg*H'];
 mc{1,1}=Jn\(-H*Cg*H');
 mc{1,2}=[Jn\(H*Kg) Jn\(H*Cg)];
 A=cell2mat(mc);
-kesi=1;tn=60;
+kesi=1;tn=100;
 %计算固有频率
 wn=10/(kesi*tn);
 %%%%%%%%%%%%%%控制率设计
@@ -63,14 +63,12 @@ q=[q0;q1;q2;q3];%初始四元数
 qd=[1;0;0;0];%初始四元数
 % innum=5676;%施加外力节点编号
 % inn=3;%施加力或力矩的自由度
-outnum=100;%输出节点
+outnum=163;%输出节点
 outn=3;%输出节点自由度
-outnum4=163;%输出节点
-outn4=2;%输出节点自由度
 nksi=length(Af)/2;
 y(:,1)=zeros(23,1);
 y(1:3,1)=w(:,1);
-h=0.01;i=1;
+h=0.01;i=1;global ydelta;ydelta=zeros(23,1);x2=zeros(20,1);
  for j=0:h:100
 t(i)=j;
 we=wb(:,i)-wbd;
@@ -89,14 +87,29 @@ psi=atan(2*(q(1)*q(4)-q(3)*q(2))/(q(3)^2+q(1)^2-q(2)^2-q(4)^2));
 sita_ctrl_eff(:,i)=[fii;theta;psi]*180/pi;
 
 M(:,i)=W*J*w(:,i)-K*qe1-D*we;
+M2(:,i)=-0.1*y(4:13,i)-0.1*y(14:23,i);
 f=Jn\M(:,i);%等效外力
 % f=zeros(3,1);
-F=[f;zeros(20,1)];
+%hengjia control
+% omega=ydelta(1:3,:);
+% x2=[y(4:13,i);ydelta(4:13,:)];
+% Ft=[zeros(10,1);-H'*omega];
+% K12=A1*x2+Ft; 
+% K22=A1*(x2+h*K12/2)+Ft;
+% K32=A1*(x2+h*K22/2)+Ft;
+% K42=A1*(x2+h*K32)+Ft;
+% x2=x2+h/6*(K12+2*K22+2*K32+K42);
+% y(4:13,i)=x2(1:10,:);
+%attitude control
+F=[f;M2(:,i);zeros(10,1)];
 K1=A*y(:,i)+F;
 K2=A*(y(:,i)+h*K1/2)+F;
 K3=A*(y(:,i)+h*K2/2)+F;
 K4=A*(y(:,i)+h*K3)+F;
-y(:,i+1)=y(:,i)+h/6*(K1+2*K2+2*K3+K4);
+ydelta=h/6*(K1+2*K2+2*K3+K4);
+y(:,i+1)=y(:,i)+ydelta;
+
+%%%%%
 w(:,i+1)=y(1:3,i+1);
 qv=0.5*[-q(2),-q(3),-q(4);
          q(1),q(4),-q(3);
@@ -115,10 +128,9 @@ i=i+1;
  end
 wb(:,i)=[];
 y(:,i)=[];
-z=fi(6*(outnum-1)+outn,:)*y(4:13,:);
-plot(t,wb,'LineWidth',1.4);
+plot(t,wb);
 xlabel('t/s');ylabel('rad/s');title('本体角速度');
-% legend('uncontrolled state','controlled state');
+z=fi(6*(outnum-1)+outn,:)*y(4:13,:);
 % x(i)=coord(6*(outnum-1)+outn,:);
 % y1(i)=coord(6*(outnum-1)+2,:);
 figure(2)
