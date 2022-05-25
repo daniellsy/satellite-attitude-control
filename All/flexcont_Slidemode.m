@@ -37,7 +37,7 @@ mc{2,1}=[-H';Cg*H'];
 mc{1,1}=Jn\(-H*Cg*H');
 mc{1,2}=[Jn\(H*Kg) Jn\(H*Cg)];
 A=cell2mat(mc);
-theta=16;fii=20;psi=-12;
+theta=8;fii=10;psi=-6;
 a1=sin(theta/2/180*pi);b1=cos(theta/2/180*pi);%theta
 a2=sin(fii/2/180*pi);b2=cos(fii/2/180*pi);%fi
 a3=sin(psi/2/180*pi);b3=cos(psi/2/180*pi);%psi
@@ -49,8 +49,7 @@ wbd=[0;0;0];%期望本体角速度
 wb(:,1)=[0;0;0];%初始本体角速度
 w(:,1)=[0;0;0];%本体相对于惯性系速度
 q=[q0;q1;q2;q3];%初始四元数
-qd=[1;0;0;0];%初始四元数
-
+qd=[1;0;0;0];%期望四元数
 % innum=5676;%施加外力节点编号
 % inn=3;%施加力或力矩的自由度
 outnum=163;%输出节点
@@ -79,7 +78,7 @@ sita_ctrl_eff(:,i)=[fii;theta;psi]*180/pi;
 qe1=qe(2:4);
 qe1_dao=-0.5*W*qe1+0.5*qe(1)*we;
 %参数
-miu=1000;
+miu=450;
 k=eye(3);
 %滑模面
 s=we+k*qe1;
@@ -111,17 +110,20 @@ y(:,i)=[];
 plot(t,wb);
 xlabel('t/s');ylabel('rad/s');
 z=fi(6*(outnum-1)+outn,:)*y(4:13,:);
+plot(t,wb(1,:),'k',t,wb(2,:),'--',t,wb(3,:),'-.','LineWidth',1.2);
+xlabel('t/s');ylabel('rad/s');title('本体角速度');
+legend('wx','wy','wz');
 % x(i)=coord(6*(outnum-1)+outn,:);
 % y1(i)=coord(6*(outnum-1)+2,:);
 figure(2)
-plot(t,M);
-xlabel('t/s');ylabel('Nm');
+plot(t,M(1,:),'k',t,M(2,:),'--',t,M(3,:),'-.','LineWidth',1.2);
+xlabel('t/s');ylabel('Nm');title('姿态控制力矩');
+legend('Mx','My','Mz');
 figure(3)
-plot(t,sita_ctrl_eff);
-xlabel('t/s');ylabel('°');
+plot(t,sita_ctrl_eff(1,:),'k',t,sita_ctrl_eff(2,:),'--',t,sita_ctrl_eff(3,:),'-.','LineWidth',1.2);
+xlabel('t/s');ylabel('°');title('欧拉角变化曲线');
+legend('偏航角','滚转角','俯仰角');
 figure(4)
 plot(t,z);
-xlabel('t/s');ylabel('z/m');
-% plot(t,eff);
-% plot(t,qdsave);
-% hold on;plot(t,qsave);
+xlabel('t/s');ylabel('z/m');title('桁架末端z向位移');
+save dataslide.mat wb M sita_ctrl_eff z t

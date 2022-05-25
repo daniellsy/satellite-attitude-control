@@ -37,7 +37,7 @@ mc{2,1}=[-H';Cg*H'];
 mc{1,1}=Jn\(-H*Cg*H');
 mc{1,2}=[Jn\(H*Kg) Jn\(H*Cg)];
 A=cell2mat(mc);
-kesi=1;tn=60;
+kesi=1;tn=80;
 %计算固有频率
 wn=10/(kesi*tn);
 %%%%%%%%%%%%%%控制率设计
@@ -116,20 +116,22 @@ i=i+1;
 wb(:,i)=[];
 y(:,i)=[];
 z=fi(6*(outnum-1)+outn,:)*y(4:13,:);
-plot(t,wb,'LineWidth',1.4);
+plot(t,wb(1,:),'k',t,wb(2,:),'--',t,wb(3,:),'-.','LineWidth',1.2);
 xlabel('t/s');ylabel('rad/s');title('本体角速度');
-% legend('uncontrolled state','controlled state');
+legend('wx','wy','wz');
 % x(i)=coord(6*(outnum-1)+outn,:);
 % y1(i)=coord(6*(outnum-1)+2,:);
 figure(2)
-plot(t,M);
+plot(t,M(1,:),'k',t,M(2,:),'--',t,M(3,:),'-.','LineWidth',1.2);
 xlabel('t/s');ylabel('Nm');title('姿态控制力矩');
+legend('Mx','My','Mz');
 figure(3)
-plot(t,sita_ctrl_eff);
-xlabel('t/s');ylabel('°');
+plot(t,sita_ctrl_eff(1,:),'k',t,sita_ctrl_eff(2,:),'--',t,sita_ctrl_eff(3,:),'-.','LineWidth',1.2);
+xlabel('t/s');ylabel('°');title('欧拉角变化曲线');
+legend('偏航角','滚转角','俯仰角');
 figure(4)
 plot(t,z);
-xlabel('t/s');ylabel('z/m');
+xlabel('t/s');ylabel('z/m');title('桁架末端z向位移');
 % plot(t,eff);
 % plot(t,qdsave);
 % hold on;plot(t,qsave);
