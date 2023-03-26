@@ -1,4 +1,4 @@
-clear;clc;
+lear;clc;
 load datacollab.mat
 wbc=wb; Mc=M; sita_ctrl_effc=sita_ctrl_eff; zc=z;
 load dataslide.mat;

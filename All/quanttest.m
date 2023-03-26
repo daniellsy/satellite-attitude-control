@@ -1,5 +1,4 @@
 clear;clc;
-
 a1=sin(4/180*pi);b1=cos(4/180*pi);%theta
 a2=sin(5/180*pi);b2=cos(5/180*pi);%fi
 a3=sin(3/180*pi);b3=cos(3/180*pi);%psi

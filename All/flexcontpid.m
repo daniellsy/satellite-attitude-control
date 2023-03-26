@@ -116,6 +116,8 @@ i=i+1;
 wb(:,i)=[];
 y(:,i)=[];
 z=fi(6*(outnum-1)+outn,:)*y(4:13,:);
+y1=fft(z);
+f1=(0:length(y1)-1)*100/length(y1);
 plot(t,wb(1,:),'k',t,wb(2,:),'--',t,wb(3,:),'-.','LineWidth',1.2);
 xlabel('t/s');ylabel('rad/s');title('本体角速度');
 legend('wx','wy','wz');
@@ -132,6 +134,8 @@ legend('偏航角','滚转角','俯仰角');
 figure(4)
 plot(t,z);
 xlabel('t/s');ylabel('z/m');title('桁架末端z向位移');
+figure(5)
+plot(f1,abs(y1));
 % plot(t,eff);
 % plot(t,qdsave);
 % hold on;plot(t,qsave);

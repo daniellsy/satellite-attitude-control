@@ -33,8 +33,7 @@ load movedata;
 %data = [x',y',z']              %查看封闭曲线的坐标数值
 plot3(x,y,z,'r','Linewidth',0.1)  %绘制曲线
 hold on;plot3(0,0,0,'b','Linewidth',1)
-axis off;                       %不画坐标轴
-%定义“线”色、“点”型（点）、点的大小（40）、擦除方式（xor)
+axis off;                       %不画坐标轴2定义"线”色、“点”型（点）、点的大小（40）、擦除方式（xor)
 h = line('Color',[0.1 0.1 0.1],'Marker','.','MarkerSize',10,'EraseMode','xor');
 %使小球运动
 n = length(x);
